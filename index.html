@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b1b">
+  <title>WhatIf World — Imagine the Impossible</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="WhatIf World home"><span class="brand-mark">✦</span> WhatIf <b>World</b></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#explore" class="nav-link">Explore</a>
+      <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="#about" class="nav-link">About</a>
+      <button class="nav-cta" id="signinBtn">Sign in</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR IMAGINATION HAS NO LIMITS</div>
+        <h1>What if the world<br>was <span class="gradient-text">different?</span></h1>
+        <p class="hero-description">One question can change everything. Explore extraordinary possibilities, make choices, and discover how the future could unfold.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#explore">Explore scenarios <span>↗</span></a>
+          <a class="button button-ghost" href="#how-it-works">How it works <span>→</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>∞</strong><span>Possibilities</span></div>
+          <div class="stat-divider"></div>
+          <div><strong>1</strong><span>Curious mind</span></div>
+          <div class="stat-divider"></div>
+          <div><strong>100%</strong><span>Imagination</span></div>
+        </div>
+      </div>
+      <div class="universe-art" aria-label="Illustration of a glowing planet in space" role="img">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="planet"><div class="planet-shine"></div><div class="planet-land land-one"></div><div class="planet-land land-two"></div><div class="planet-ring"></div></div>
+        <span class="floating-chip chip-one">✧ Imagine</span><span class="floating-chip chip-two">∞ Possibilities</span>
+        <span class="tiny-star star-a">✦</span><span class="tiny-star star-b">✧</span><span class="tiny-star star-c">✦</span>
+      </div>
+      <a class="scroll-cue" href="#explore"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="section explore-section" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE POSSIBILITY PLAYGROUND</div><h2>Choose a <span class="gradient-text">What If?</span></h2></div>
+        <p>Pick a world. Make your choice.<br>See what could happen next.</p>
+      </div>
+      <div class="filter-row" id="filterRow">
+        <button class="filter active" data-filter="all">All scenarios <span>06</span></button>
+        <button class="filter" data-filter="future">Future & tech</button>
+        <button class="filter" data-filter="space">Space</button>
+        <button class="filter" data-filter="society">Society</button>
+        <button class="filter" data-filter="fantasy">Wild ideas</button>
+      </div>
+      <div class="scenario-grid" id="scenarioGrid"></div>
+      <div class="custom-banner">
+        <div class="custom-icon">✧</div>
+        <div><h3>Have a “What if?” of your own?</h3><p>Your imagination is the starting point. Create a scenario and explore your own idea.</p></div>
+        <button class="button button-primary" id="createBtn">Create a scenario <span>＋</span></button>
+      </div>
+    </section>
+
+    <section class="section how-section" id="how-it-works">
+      <div class="section-heading centered"><div class="eyebrow">SIMPLE. CURIOUS. UNLIMITED.</div><h2>How the <span class="gradient-text">journey works</span></h2><p>Every great discovery starts with a question.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-number">01</div><div class="step-icon">🔭</div><h3>Pick a possibility</h3><p>Explore imaginative scenarios about technology, space, society, and beyond.</p></article>
+        <article class="step-card"><div class="step-number">02</div><div class="step-icon">🧭</div><h3>Make your choice</h3><p>Choose a path and see how a small decision can change the story.</p></article>
+        <article class="step-card"><div class="step-number">03</div><div class="step-icon">✨</div><h3>Discover the outcome</h3><p>Read a possible outcome, think about the trade-offs, and try another path.</p></article>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-orb">✦</div><div class="about-copy"><div class="eyebrow">A LITTLE ABOUT US</div><h2>Curiosity can take us <span class="gradient-text">anywhere.</span></h2><p>WhatIf World is an interactive imagination lab. It helps you explore “what if” questions through choice-based mini stories. These are creative thought experiments—not predictions—and the possibilities are yours to explore.</p><div class="about-tags"><span>Curiosity first</span><span>Explore freely</span><span>Think differently</span></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">✦</span> WhatIf <b>World</b></a><p>Imagine the Impossible. Explore the Possible.</p><span>© <span id="year"></span> WhatIf World · Built for curious minds</span></footer>
+
+  <div class="modal-backdrop" id="scenarioModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-top-icon" id="modalIcon">🌌</div>
+      <div class="eyebrow" id="modalCategory">SCENARIO</div>
+      <h2 id="modalTitle">What if…?</h2>
+      <p id="modalIntro" class="modal-intro"></p>
+      <div id="choiceArea" class="choice-area"></div>
+      <div id="outcomeArea" class="outcome-area" hidden></div>
+      <button class="button button-primary modal-reset" id="tryAgainBtn" hidden>Try another choice ↻</button>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="createModal" aria-hidden="true">
+    <section class="modal create-modal" role="dialog" aria-modal="true" aria-labelledby="createTitle">
+      <button class="modal-close" id="createClose" aria-label="Close">×</button>
+      <div class="eyebrow">YOUR IMAGINATION, YOUR RULES</div><h2 id="createTitle">Create a <span class="gradient-text">What If?</span></h2>
+      <p class="modal-intro">Write a question and give your imagined world a starting point.</p>
+      <form id="createForm">
+        <label for="customQuestion">Your “What if?” question</label><input id="customQuestion" maxlength="100" placeholder="What if humans could breathe underwater?" required>
+        <label for="customCategory">Choose a category</label><select id="customCategory"><option value="fantasy">Wild ideas</option><option value="future">Future & tech</option><option value="space">Space</option><option value="society">Society</option></select>
+        <label for="customDescription">Set the scene</label><textarea id="customDescription" rows="3" maxlength="250" placeholder="Describe what changes in this world..." required></textarea>
+        <button class="button button-primary full-button" type="submit">Add to my world <span>✦</span></button>
+      </form>
+      <p class="form-note" id="createNote" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/scenarios.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
